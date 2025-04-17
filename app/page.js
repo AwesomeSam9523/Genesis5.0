@@ -135,6 +135,7 @@ export default function Home() {
                 height={1500}
                 width={1500}
                 className="w-full h-full object-cover mascot"
+                priority={true}
               />
             </div>
             <div className=" lg:flex flex-col items-end gap-4">
