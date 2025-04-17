@@ -130,7 +130,7 @@ export default function Home() {
             <div
               className="2xl:h-[80rem] 2xl:mt-[-16rem] xl:h-[70rem] xl:mt-[-14rem] lg:mt-[-12rem] lg:h-[60rem] md:mt-[-10rem] md:h-[50rem] sm:h-[40rem] sm:mt-[-7rem] h-[30rem] mt-[-4rem] w-auto max-w-screen-xl mx-auto px-2 sm:px-0">
               <Image
-                src="https://s3-alpha-sig.figma.com/img/e22a/e5af/28f38cae7afd544d9e8c5cf6ac6b911b?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=idqraryvOSqbYZU0o2xPmRGat5oUGOVnQW2ecPcNDluoYlBM3wzanTU1ek7NOfxsc-xKuRLFKcZaAB7mQBkRCRu~TH4k92iqpwToDv7iaarBXZAYYd7xdOP6Ow6~U-Qxh7UzeRG3QGLiYftUrp5ZU9Rt2Vc3fslT1RXTewEhvPGNkdC2ycRwFZa9DHGHx77cAfm4nYcwZjaxemuIUKhj8UQq9glFCsQlpgNMea1ERPYJD~0rltoIH3RhpydKld~vpxhGGQVWjpK-~WlwnNlcXy-p~gwhNBOiL8N2k7Z5hjrGUliKZp-aPqT5msnBboTAkDoBz0OyUmB9rgOY9kSJIg__"
+                src="/Mascot.svg"
                 alt="Mascot Image"
                 height={1500}
                 width={1500}
