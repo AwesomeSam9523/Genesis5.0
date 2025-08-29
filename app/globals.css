@@ -9,6 +9,16 @@
   font-family: "Clash Grotesk", sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+  zoom: 0.8;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

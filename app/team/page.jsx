@@ -159,13 +159,13 @@ export default function Team() {
                   )}
                 </div>
               </div>
-              {/* Media Section */}
+              {/* Media & Coverage Section */}
               <div className="w-full">
                 <h2 className="text-4xl font-[600]  mb-4 text-center">
                   Media & Coverage Team
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-content-center place-items-center gap-10">
-                  {CCData.filter((human) => human.team === "Media").map(
+                  {CCData.filter((human) => human.team === "Media & Coverage").map(
                     (human, index) => (
                       <HumansCard key={index} index={index} {...human} />
                     )
@@ -281,6 +281,20 @@ export default function Team() {
                 </div>
               </div>
 
+              {/* Curations Section */}
+              <div className="w-full">
+                <h2 className="text-4xl font-[600]  mb-4 text-center">
+                  Curations Team
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-content-center place-items-center gap-10">
+                  {CCData.filter((human) => human.team === "Curations").map(
+                    (human, index) => (
+                      <HumansCard key={index} index={index} {...human} />
+                    )
+                  )}
+                </div>
+              </div>
+
               
               {/* Finance Section */}
               <div className="w-full">
@@ -315,8 +329,6 @@ export default function Team() {
           <Footer />
         </div>
       </div>
-      {/* <div className="bg-black w-full h-full py-24 lg:py-40">
-      </div> */}
     </>
   );
 }

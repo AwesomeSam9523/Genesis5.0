@@ -112,7 +112,7 @@ export default function Home() {
               </div>
               <div
                 className="2xl:text-[5rem] 2xl:pt-[20%] xl:text-[4.5rem] lg:text-[4rem] md:text-[3.5rem] sm:text-[3rem] sm:pt-[18%] text-[2rem] pt-[13%] text-white ">
-                4.0
+                5.0
               </div>
             </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
             <div
               className="2xl:h-[80rem] 2xl:mt-[-16rem] xl:h-[70rem] xl:mt-[-14rem] lg:mt-[-12rem] lg:h-[60rem] md:mt-[-10rem] md:h-[50rem] sm:h-[40rem] sm:mt-[-7rem] h-[30rem] mt-[-4rem] w-auto max-w-screen-xl mx-auto px-2 sm:px-0">
               <Image
-                src="/Mascot.svg"
+                src="/Mascot.png"
                 alt="Mascot Image"
                 height={1500}
                 width={1500}
@@ -177,14 +177,14 @@ export default function Home() {
                   className="text-center text-[#F5F0D8] text-3xl lg:text-4xl
                     font-medium leading-[44px]"
                 >
-                  Why participate in Genesis 4.0?
+                  Why participate in Genesis 5.0?
                 </p>
               </div>
               <p
                 className="text-center text-[#D1CAC7] text-lg lg:text-xl
                   font-normal font-['Inter'] leading-[30px]"
               >
-                Genesis 4.0 promises a wonderful experience to the
+                Genesis 5.0 promises a wonderful experience to the
                 participants.
               </p>
             </div>

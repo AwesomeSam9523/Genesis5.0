@@ -4,6 +4,7 @@ import genesisLogo from "./../../public/footer/WHITE TEXT .png";
 import ieeeSBLogo from "./../../public/footer/ieee sb white logo.png";
 import ieeeCSLogo from "./../../public/footer/IEEE CS WHITE LOGO.png";
 import ieeeWIELogo from "./../../public/footer/ieee wie white logo.png";
+import ieeeCISLogo from "./../../public/footer/IEEE CIS.PNG";
 
 const Footer = () => {
   return (
@@ -28,43 +29,64 @@ const Footer = () => {
             <img
               src={ieeeCSLogo.src}
               alt="IEEE CS Logo"
-              className="h-12 w-auto"
+              className="h-12 w-auto object-contain"
             />
             <img
               src={ieeeSBLogo.src}
               alt="IEEE SB Logo"
-              className="h-12 w-auto"
+              className="h-12 w-auto object-contain"
             />
-            <img
-              src={ieeeWIELogo.src}
-              alt="IEEE WIE Logo"
-              className="h-12 w-auto"
-            />
+            <div className="flex items-center gap-2">
+              <img
+                src={ieeeWIELogo.src}
+                alt="IEEE WIE Logo"
+                className="h-12 w-auto object-contain"
+              />
+              <img
+                src={ieeeCISLogo.src}
+                alt="IEEE CIS Logo"
+                className="h-17+ w-auto object-contain"
+                style={{maxWidth: '160px'}}
+              />
+            </div>
           </div>
         </div>
 
-        <div className="hidden lg:block w-px bg-white h-40 mx-4"></div>
+        <div className="hidden lg:block w-px bg-white h-40 ml-32 mr-2"></div>
 
-        <div className="flex flex-col items-center justify-center text-white lg:w-1/3 lg:px-4">
-          <ContactInfo
-            name="Rishi Joshi"
-            phone="+91 95699 13103"
-            role="(Chairperson-IEEE CS MUJ)"
-          />
-          <ContactInfo
-            name="Lakshita Agarwal"
-            phone="+91 93129 41940"
-            role="(Chairperson-IEEE SB MUJ)"
-          />
-
-          <ContactInfo
-            name="Ananta Taneja"
-            phone="+91 95909 28296"
-            role="(Chairperson-IEEE WIE MUJ)"
-          />
+        <div className="flex flex-col items-center lg:items-end justify-center text-white lg:w-1/3 lg:px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:w-auto">
+            {/* First Column */}
+            <div className="flex flex-col space-y-6">
+              <ContactInfo
+                name="Samaksh Gupta"
+                phone="+91 98713 40076"
+                role="(Chairperson-IEEE CS MUJ)"
+              />
+              <ContactInfo
+                name="Kashish Kumar"
+                phone="+91 98731 63828"
+                role="(Chairperson-IEEE WIE MUJ)"
+              />
+            </div>
+            
+            {/* Second Column */}
+            <div className="flex flex-col space-y-6">
+              <ContactInfo
+                name="Aditya Rajawat"
+                phone="+91 70273 45159"
+                role="(Chairperson-IEEE SB MUJ)"
+              />
+              <ContactInfo
+                name="Anshika Katare"
+                phone="+91 7982553998"
+                role="(Chairperson-IEEE CIS MUJ)"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="hidden lg:block w-px bg-white h-40 mx-4"></div>
+        <div className="hidden lg:block w-px bg-white h-40 ml-2 mr-32"></div>
 
         <div className="flex flex-col items-center lg:items-end text-white mt-8 lg:mt-0 lg:w-1/3 lg:px-4">
           <WebsiteLink name="IEEE CS WEBSITE" href="https://cs.ieeemuj.com/" />
@@ -75,7 +97,7 @@ const Footer = () => {
 
       <div className="w-full h-px bg-white my-8"></div>
 
-      <div className="flex justify-center items-center flex-wrap">
+      <div className="flex justify-center items-center flex-wrap gap-4 lg:gap-8">
         <InstagramLink
           name="Genesis"
           href="https://www.instagram.com/genesismuj/"
@@ -91,6 +113,10 @@ const Footer = () => {
         <InstagramLink
           name="IEEE WIE"
           href="https://www.instagram.com/ieee.wiemuj/?igshid=NjIwNzIyMDk2Mg%3D%3D"
+        />
+        <InstagramLink
+          name="IEEE CIS"
+          href="https://www.instagram.com/ieee.cismuj/"
         />
       </div>
     </div>
@@ -118,7 +144,7 @@ const WebsiteLink = ({ name, href }) => (
 const InstagramLink = ({ name, href }) => (
   <Link
     href={href}
-    className="flex items-center text-white hover:text-gray-300 transition-colors w-1/2 pl-[16%] sm:pl-0 sm:w-1/4 sm:justify-center"
+    className="flex items-center text-white hover:text-gray-300 transition-colors flex-shrink-0"
     target={"_blank"}
   >
     <InstagramLogoIcon className="w-6 h-6 mr-2" />

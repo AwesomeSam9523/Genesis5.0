@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { Carousel } from "@/components/ImageGrid";
 
 // Import existing images
 import image1 from "@/public/galleryPage/image1.jpeg";
@@ -23,11 +24,17 @@ import image14 from "@/public/galleryPage/image14.jpeg";
 import image15 from "@/public/galleryPage/image15.jpeg";
 import image16 from "@/public/galleryPage/image16.JPG";
 
+// Background component
+const Background = () => (
+  <div className="fixed inset-0 -z-10">
+    <div className="absolute inset-0 bg-custom-gradient" />
+  </div>
+);
+
 // Gallery data organized by sections
 const galleryData = [
   {
-    title: "GENESIS 5.0 HIGHLIGHTS",
-    subtitle: "Main event moments and celebrations",
+    title: "GENESIS 3.0 HIGHLIGHTS",
     images: [
       { src: image1, size: "tall" },
       { src: image2, size: "small" },
@@ -39,7 +46,6 @@ const galleryData = [
   },
   {
     title: "WORKSHOPS & SESSIONS",
-    subtitle: "Learning experiences and technical sessions",
     images: [
       { src: image7, size: "tall" },
       { src: image8, size: "small" },
@@ -51,7 +57,6 @@ const galleryData = [
   },
   {
     title: "TEAM MOMENTS",
-    subtitle: "Behind the scenes and team interactions",
     images: [
       { src: image13, size: "tall" },
       { src: image14, size: "small" },
@@ -99,6 +104,7 @@ const Page = () => {
                 width={220}
                 height={340}
                 className="h-full w-full object-cover grayscale"
+                placeholder="blur"
               />
             </div>
           )}
@@ -118,6 +124,7 @@ const Page = () => {
                     width={170}
                     height={170}
                     className="h-full w-full object-cover"
+                    placeholder="blur"
                   />
                 </div>
               ))}
@@ -135,6 +142,7 @@ const Page = () => {
                     width={170}
                     height={170}
                     className="h-full w-full object-cover grayscale"
+                    placeholder="blur"
                   />
                 </div>
               ))}
@@ -150,6 +158,7 @@ const Page = () => {
                 width={340}
                 height={340}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -166,6 +175,7 @@ const Page = () => {
                 width={200}
                 height={400}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -179,6 +189,7 @@ const Page = () => {
                 width={180}
                 height={180}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -192,6 +203,7 @@ const Page = () => {
                 width={180}
                 height={180}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -205,6 +217,7 @@ const Page = () => {
                 width={180}
                 height={180}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -218,6 +231,7 @@ const Page = () => {
                 width={180}
                 height={180}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -231,6 +245,7 @@ const Page = () => {
                 width={400}
                 height={400}
                 className="h-full w-full object-cover"
+                placeholder="blur"
               />
             </div>
           )}
@@ -240,31 +255,136 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full bg-custom-gradient text-white">
+    <div
+      ref={sectionRef}
+      className="text-offwhite relative min-h-screen w-full overflow-hidden"
+    >
+      <Background />
       <Navbar />
+      
+      {/* Hero Section with Carousel */}
+      <div className="pt-24">
+        <p className="text-[#fffbe7] font-normal leading-none text-[3.2rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[6rem] text-center pt-4 sm:pt-[50px] pb-4 sm:pb-8">
+          Our Memories
+        </p>
+        <Carousel />
+      </div>
 
-      {/* Gallery Content */}
-      <div ref={sectionRef} className="px-4 py-16 md:px-8 lg:px-16 pt-40">
-        {galleryData.map((section, sectionIndex) => (
-          <div key={sectionIndex} className="relative mb-20">
-            {/* Section Header */}
-            <div className="relative mb-12 text-center">
+      <div className="flex flex-col items-center justify-center gap-5 mt-16">
+        <button className="font-avgardn text-offwhite rounded-full border-2 border-white bg-transparent px-4 py-3 text-base font-bold tracking-wider uppercase transition-all duration-300 lg:px-10 lg:text-lg">
+          GLIMPSE OF OUR PREVIOUS EDITIONS
+        </button>
+        <div className="font-kinetikaUltra text-offwhite mb-8 text-center text-5xl leading-[79.9%] font-black md:text-6xl">
+          GALLERY
+        </div>
+      </div>
 
-              <h2 className="pt-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+      <div className="flex flex-col items-center justify-start space-y-8 px-2 sm:space-y-16 sm:px-4 md:px-8">
+        {galleryData.map((section, idx) => (
+          <div key={idx} className="relative space-y-4 sm:space-y-8">
+            {/* Section Title with SVG corners */}
+            <div className="relative mx-auto w-fit px-6 py-2 sm:px-8">
+              {/* Top Left Corner */}
+              <div className="absolute top-0 left-0">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="sm:h-6 sm:w-6"
+                >
+                  <path
+                    d="M2 2L2 8M2 2L8 2"
+                    stroke="white"
+                    strokeWidth="3"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </div>
+
+              {/* Top Right Corner */}
+              <div className="absolute top-0 right-0">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="sm:h-6 sm:w-6"
+                >
+                  <path
+                    d="M22 2L22 8M22 2L16 2"
+                    stroke="white"
+                    strokeWidth="3"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </div>
+
+              {/* Bottom Left Corner */}
+              <div className="absolute bottom-0 left-0">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="sm:h-6 sm:w-6"
+                >
+                  <path
+                    d="M2 22L2 16M2 22L8 22"
+                    stroke="white"
+                    strokeWidth="3"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </div>
+
+              {/* Bottom Right Corner */}
+              <div className="absolute right-0 bottom-0">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="sm:h-6 sm:w-6"
+                >
+                  <path
+                    d="M22 22L22 16M22 22L16 22"
+                    stroke="white"
+                    strokeWidth="3"
+                    strokeLinecap="square"
+                  />
+                </svg>
+              </div>
+
+              <h3 className="text-offwhite text-center text-lg font-bold tracking-wider sm:text-xl">
                 {section.title}
-              </h2>
-              <p className="mt-4 text-lg text-white md:text-xl">
-                {section.subtitle}
-              </p>
+              </h3>
             </div>
 
-            {/* Image Grid */}
-            {renderImageGrid(section.images)}
+            {/* Grid Container with Corner Decorators */}
+            <div className="relative">
+              {/* Corner Decorators - Hidden on mobile */}
+              {/* Top Left Corner Decorator */}
+              <div className="absolute top-0 left-20 hidden h-6 w-6 border-t-4 border-l-4 border-white sm:left-40 sm:h-8 sm:w-8 lg:left-0 lg:block"></div>
+
+              {/* Top Right Corner Decorator */}
+              <div className="absolute top-0 right-20 hidden h-6 w-6 border-t-4 border-r-4 border-white sm:right-40 sm:h-8 sm:w-8 lg:right-0 lg:block"></div>
+
+              {/* Bottom Left Corner Decorator */}
+              <div className="absolute bottom-0 left-20 hidden h-6 w-6 border-b-4 border-l-4 border-white sm:left-40 sm:h-8 sm:w-8 lg:left-0 lg:block"></div>
+
+              {/* Bottom Right Corner Decorator */}
+              <div className="absolute right-20 bottom-0 hidden h-6 w-6 border-r-4 border-b-4 border-white sm:right-40 sm:h-8 sm:w-8 lg:right-0 lg:block"></div>
+
+              {renderImageGrid(section.images)}
+            </div>
           </div>
         ))}
       </div>
       
-      <Footer />
+      <div className="pb-16">
+        <Footer />
+      </div>
     </div>
   );
 };

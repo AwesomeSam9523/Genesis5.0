@@ -2,21 +2,23 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  TwitterLogoIcon,
-  LinkedInLogoIcon,
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-} from "@radix-ui/react-icons";
 
-const SocialMediaIcon = ({ Icon, href }) => {
+const SocialMediaIcon = ({ href, iconSrc, alt }) => {
   if (!href) return null; // Return null if href is not provided or empty
 
   return (
-    <a href={href} target="_blank" className="social-icon">
-      <Icon
-        className="w-7 h-7 text-white transition ease-in-out delay-150 
-          hover:scale-125 duration-300"
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex h-8 w-8 items-center justify-center transition-all duration-300 ease-in-out"
+    >
+      <Image
+        src={iconSrc}
+        alt={alt}
+        height={16}
+        width={16}
+        className="object-cover transition-transform duration-300 ease-in-out"
       />
     </a>
   );
@@ -31,9 +33,61 @@ const HumansCard = ({
   twitter,
   github,
   instagram,
+  phone,
 }) => {
-  const defaultGradient =
-    "radial-gradient(100% at center, #363636 100%, #1A1A1A 27%)";
+  // Helper function to create phone link
+  const renderPhoneLink = (phoneNumber) => (
+    <a
+      key={phoneNumber}
+      href={`tel:${phoneNumber}`}
+      className="inline-flex h-8 w-8 items-center justify-center transition-all duration-300 ease-in-out hover:scale-105"
+    >
+      <Image
+        src="/Teampage/phone.png"
+        alt="phone"
+        height={16}
+        width={16}
+        className="object-cover transition-transform duration-300 ease-in-out"
+      />
+    </a>
+  );
+
+  // Collect all available social links
+  const socialLinks = [
+    instagram && (
+      <SocialMediaIcon 
+        key="instagram"
+        href={instagram} 
+        iconSrc="/Teampage/instagram.png" 
+        alt="instagram" 
+      />
+    ),
+    linkedin && (
+      <SocialMediaIcon 
+        key="linkedin"
+        href={linkedin} 
+        iconSrc="/Teampage/linkedin.png" 
+        alt="linkedin" 
+      />
+    ),
+    github && (
+      <SocialMediaIcon 
+        key="github"
+        href={github} 
+        iconSrc="/Teampage/github.png" 
+        alt="github" 
+      />
+    ),
+    twitter && (
+      <SocialMediaIcon 
+        key="twitter"
+        href={twitter} 
+        iconSrc="/Teampage/twitter.png" 
+        alt="twitter" 
+      />
+    ),
+    phone && renderPhoneLink(phone),
+  ].filter(Boolean); // Remove null/undefined values
 
   return (
     <>
@@ -54,52 +108,35 @@ const HumansCard = ({
         }}
         viewport={{ once: true }}
       >
-        <div
-          className="flex flex-col items-center gap-0 shadow text-white rounded-lg bg-blue"
-          style={{ background: defaultGradient }}
-        >
-          <div className="relative group bg-blue rounded-lg overflow-hidden ">
-            <motion.div
-              className="relative"
-              initial={{ y: 0 }}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-              style={{ boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}
-            >
-              <div className="relative w-[240px] h-[300px]">
-                <Image
-                  src={profilepic}
-                  width={260}
-                  height={300}
-                  className="w-full h-full outline-none object-cover transition-shadow duration-300 group-hover:shadow-lg group-hover:shadow-black border-8 border-blue-900 border-opacity-0"
-                  alt="Profile Picture"
-                />
-                <div
-                  className="absolute inset-0 flex items-center justify-center bg-black 
-                  bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-0"
-                >
-                  <div className="flex gap-6 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
-                    {linkedin && <SocialMediaIcon href={linkedin} Icon={LinkedInLogoIcon} />}
-                    {twitter && <SocialMediaIcon href={twitter} Icon={TwitterLogoIcon} />}
-                    {github && <SocialMediaIcon href={github} Icon={GitHubLogoIcon} />}
-                    {instagram && <SocialMediaIcon href={instagram} Icon={InstagramLogoIcon} />}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        <div className="transform rounded-2xl border border-white/15 bg-white/20 p-6 text-center shadow-lg backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/25 hover:bg-white/25 hover:shadow-xl w-[300px] h-[450px] flex flex-col mx-auto">
+          <div className="mb-4 h-[240px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex-shrink-0">
+            <Image
+              src={profilepic}
+              alt={name}
+              height={400}
+              width={300}
+              className="h-full w-full object-cover"
+            />
           </div>
-
-          <div className="w-full flex flex-col items-center gap-2 p-1 bg-blue-900 bg-opacity-0 rounded-b-lg">
-            <div>
-              <p className="sm:text-2xl text-xl text-white font-semibold text-center mb-1">
+          <div className="flex-grow flex flex-col justify-between min-h-[130px]">
+            <div className="flex-grow flex flex-col justify-center">
+              <h3 className="text-offwhite mb-2 text-xl font-extrabold tracking-wide drop-shadow-lg line-clamp-2">
                 {name}
-              </p>
+              </h3>
               {role && (
-                <p className="font-[Inter] text-gray-300 text-center text-lg sm:text-base leading-6 ">
+                <p className="mb-4 text-sm font-extrabold whitespace-pre-line text-gray-200 drop-shadow-md line-clamp-2 tracking-wide">
                   {role}
                 </p>
               )}
             </div>
+            {/* Social Media Icons - Pill-shaped container design */}
+            {socialLinks.length > 0 && (
+              <div className="flex items-center justify-center mt-auto">
+                <div className="flex items-center justify-center gap-1 rounded-full border-2 border-white/30 bg-white/10 px-1 py-1 backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20">
+                  {socialLinks}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
