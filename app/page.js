@@ -130,7 +130,7 @@ export default function Home() {
             <div
               className="2xl:h-[80rem] 2xl:mt-[-16rem] xl:h-[70rem] xl:mt-[-14rem] lg:mt-[-12rem] lg:h-[60rem] md:mt-[-10rem] md:h-[50rem] sm:h-[40rem] sm:mt-[-7rem] h-[30rem] mt-[-4rem] w-auto max-w-screen-xl mx-auto px-2 sm:px-0">
               <Image
-                src="/Mascot.png"
+                src="/Mascot.svg"
                 alt="Mascot Image"
                 height={1500}
                 width={1500}
