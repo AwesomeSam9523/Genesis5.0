@@ -3,18 +3,18 @@ import TextAnimation from "@/components/TextAnimation";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Contact | Genesis 4.0",
+  title: "Contact | Genesis 5.0",
   description:
     "Connect with us at IEEE's Genesis! Reach out for assistance, questions, or just to say hello. Find information on reaching Manipal University Jaipur, including travel options.",
   keywords: "contact, genesis, reach us, get in touch",
   openGraph: {
-    title: "Contact | Genesis 4.0",
+    title: "Contact | Genesis 5.0",
     description:
       "Connect with us at IEEE's Genesis! Reach out for assistance, questions, or just to say hello. Find information on reaching Manipal University Jaipur, including travel options.",
     url: "https://genesis.muj/contact",
     images:
       "https://images.prismic.io/ieeemuj/Zral1EaF0TcGI1jj_thumb.jpg?auto=format,compress",
-    siteName: "Contact | Genesis 4.0",
+    siteName: "Contact | Genesis 5.0",
     type: "website",
     locale: "en_US",
   },
@@ -153,13 +153,13 @@ export default function Contact() {
               font-normal text-[1rem] md:flex-row lg:text-[1.5rem]"
               >
                 <div className="flex flex-col items-start gap-2">
-                <p>+91 95699 13103</p>
-                <p>Rishi Joshi</p>
+                <p>+91 9871340076</p>
+                <p>Samaksh Gupta</p>
                 </div>
                 <div className="flex flex-col items-start gap-2">
 
-                  <p>+91 93129 41940</p>
-                  <p>Lakshita Agarwal</p>
+                  <p>+91 7027345159</p>
+                  <p>Aditya Rajawat</p>
                 </div>
               </div>
             </div>

@@ -45,17 +45,17 @@ const Footer = () => {
               <img
                 src={ieeeCISLogo.src}
                 alt="IEEE CIS Logo"
-                className="h-17+ w-auto object-contain"
+                className="h-17 w-auto object-contain"
                 style={{maxWidth: '160px'}}
               />
             </div>
           </div>
         </div>
 
-        <div className="hidden lg:block w-px bg-white h-40 ml-32 mr-2"></div>
+        <div className="hidden lg:block w-px bg-white h-40 ml-12 mr-12"></div>
 
-        <div className="flex flex-col items-center lg:items-end justify-center text-white lg:w-1/3 lg:px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:w-auto">
+        <div className="flex flex-col items-center justify-center text-white lg:w-1/3 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-lg">
             {/* First Column */}
             <div className="flex flex-col space-y-6">
               <ContactInfo
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block w-px bg-white h-40 ml-2 mr-32"></div>
+        <div className="hidden lg:block w-px bg-white h-40 ml-12 mr-12"></div>
 
         <div className="flex flex-col items-center lg:items-end text-white mt-8 lg:mt-0 lg:w-1/3 lg:px-4">
           <WebsiteLink name="IEEE CS WEBSITE" href="https://cs.ieeemuj.com/" />
