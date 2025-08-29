@@ -13,15 +13,27 @@ import { getUpdatedTeamData } from "./fetchTeamImages";
 // Set this to true to enable Sanity API calls
 const ENABLE_SANITY_UPDATES = true;
 
+// Loading spinner component for the entire page
+const PageLoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white/50 mx-auto mb-4"></div>
+      <p className="text-white/80 text-lg">Loading team data...</p>
+    </div>
+  </div>
+);
+
 export default function TeamPageContent() {
   const [ccTeam, setCCTeam] = useState(CCData);
   const [ecTeam, setECTeam] = useState(ECData);
   const [facultyTeam, setFacultyTeam] = useState(facultyData);
+  const [isLoading, setIsLoading] = useState(ENABLE_SANITY_UPDATES);
 
   // Memoize the update function to prevent unnecessary re-renders
   const updateTeamImages = useCallback(async () => {
     // Skip Sanity updates if disabled
     if (!ENABLE_SANITY_UPDATES) {
+      setIsLoading(false);
       return;
     }
 
@@ -41,6 +53,8 @@ export default function TeamPageContent() {
       setCCTeam(CCData);
       setECTeam(ECData);
       setFacultyTeam(facultyData);
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 
@@ -81,6 +95,26 @@ export default function TeamPageContent() {
       </div>
     </div>
   ), []);
+
+  // Show loading spinner while fetching Sanity data
+  if (isLoading) {
+    return (
+      <div className="bg-custom-gradient flex flex-col min-h-screen pt-40 flex-grow">
+        <div className="flex flex-col items-center gap-4 md:gap-6">
+          <div className="flex flex-col items-center gap-1 md:gap-3">
+            <p className="text-[#F5F0D8] text-center text-[2.5rem] font-normal md:text-[4rem] xl:text-[5rem] md:leading-[4.5rem] xl:leading-[5.25rem]">
+              Unveiling the minds behind
+              <br /> Genesis 4.0
+            </p>
+          </div>
+        </div>
+        <PageLoadingSpinner />
+        <div className="mt-auto">
+          <Footer />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

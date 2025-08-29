@@ -1,6 +1,30 @@
 // src/utils/fetchTeamImages.js
 import { client } from "@/sanity";
 
+// Helper function to check if an image URL is valid and accessible
+const isValidImageUrl = async (url) => {
+  if (!url || typeof url !== 'string') {
+    return false;
+  }
+  
+  try {
+    // Basic URL validation
+    const urlObj = new URL(url);
+    if (!urlObj.protocol.startsWith('http')) {
+      return false;
+    }
+    
+    // Check if the URL is from Sanity CDN
+    if (!url.includes('cdn.sanity.io')) {
+      return false;
+    }
+    
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
 // This function will fetch all team members from Sanity and create a map
 // for easy lookup by name.
 const fetchSanityImages = async () => {
@@ -25,13 +49,18 @@ const fetchSanityImages = async () => {
     const imageMap = new Map();
     
     if (sanityData && Array.isArray(sanityData)) {
-      sanityData.forEach(member => {
+      // Process each member and validate their image URL
+      for (const member of sanityData) {
         if (member.name && member.profilepic) {
-          // We normalize the name to lowercase for case-insensitive matching
-          const normalizedName = member.name.toLowerCase().trim();
-          imageMap.set(normalizedName, member.profilepic);
+          // Validate the image URL before adding it to the map
+          const isValidImage = await isValidImageUrl(member.profilepic);
+          if (isValidImage) {
+            // We normalize the name to lowercase for case-insensitive matching
+            const normalizedName = member.name.toLowerCase().trim();
+            imageMap.set(normalizedName, member.profilepic);
+          }
         }
-      });
+      }
     }
     
     return imageMap;
@@ -45,11 +74,6 @@ const fetchSanityImages = async () => {
 export const getUpdatedTeamData = async (hardcodedData) => {
   try {
     const imageMap = await fetchSanityImages();
-    
-    // If no images were fetched, return original data
-    if (imageMap.size === 0) {
-      return hardcodedData;
-    }
     
     const updatedData = hardcodedData.map(person => {
       // Normalize the name from your hardcoded data for lookup
@@ -72,8 +96,8 @@ export const getUpdatedTeamData = async (hardcodedData) => {
         }
       }
       
-      // Create a new object. If a Sanity image is found, use it.
-      // Otherwise, keep the original profilepic from the hardcoded data.
+      // If we have a Sanity image, use it. Otherwise, keep the original profilepic.
+      // The component will handle loading states and fallbacks.
       return {
         ...person,
         profilepic: sanityImage || person.profilepic
