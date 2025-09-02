@@ -1,5 +1,5 @@
 // src/utils/fetchTeamImages.js
-import { client } from "@/sanity";
+import { getSanityClient } from "@/sanity";
 
 // Helper function to check if an image URL is valid and accessible
 const isValidImageUrl = async (url) => {
@@ -29,8 +29,12 @@ const isValidImageUrl = async (url) => {
 // for easy lookup by name.
 const fetchSanityImages = async () => {
   try {
+    // Get the Sanity client safely
+    const client = getSanityClient();
+    
     // Check if Sanity client is properly configured
     if (!client || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+      console.warn('Sanity client not available, skipping image fetch');
       return new Map();
     }
 
@@ -65,6 +69,7 @@ const fetchSanityImages = async () => {
     
     return imageMap;
   } catch (error) {
+    console.warn('Error fetching Sanity images:', error.message);
     return new Map();
   }
 };

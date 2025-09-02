@@ -10,6 +10,7 @@ import facultyData from "@/app/team/FacultyData";
 import Footer from "@/components/Footer";
 import { getUpdatedTeamData } from "./fetchTeamImages";
 
+
 // Set this to true to enable Sanity API calls
 const ENABLE_SANITY_UPDATES = true;
 
@@ -27,28 +28,46 @@ export default function TeamPageContent() {
   const [ccTeam, setCCTeam] = useState(CCData);
   const [ecTeam, setECTeam] = useState(ECData);
   const [facultyTeam, setFacultyTeam] = useState(facultyData);
-  const [isLoading, setIsLoading] = useState(ENABLE_SANITY_UPDATES);
+  const [isLoading, setIsLoading] = useState(false); // Start with false to prevent hanging
 
   // Memoize the update function to prevent unnecessary re-renders
   const updateTeamImages = useCallback(async () => {
     // Skip Sanity updates if disabled
     if (!ENABLE_SANITY_UPDATES) {
-      setIsLoading(false);
       return;
     }
 
+    // Only try Sanity if we're in a browser environment and have config
+    if (typeof window === 'undefined' || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+      console.log('Skipping Sanity updates - not in browser or missing config');
+      return;
+    }
+
+    setIsLoading(true);
     try {
-      // Update all teams in parallel for faster loading
-      const [updatedCCData, updatedECData, updatedFacultyData] = await Promise.all([
-        getUpdatedTeamData(CCData),
-        getUpdatedTeamData(ECData),
-        getUpdatedTeamData(facultyData)
+      console.log('Starting Sanity image updates...');
+      
+      // Add a timeout to prevent hanging
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Sanity update timeout')), 10000)
+      );
+      
+      // Update all teams in parallel for faster loading with timeout
+      const [updatedCCData, updatedECData, updatedFacultyData] = await Promise.race([
+        Promise.all([
+          getUpdatedTeamData(CCData),
+          getUpdatedTeamData(ECData),
+          getUpdatedTeamData(facultyData)
+        ]),
+        timeoutPromise
       ]);
       
       setCCTeam(updatedCCData);
       setECTeam(updatedECData);
       setFacultyTeam(updatedFacultyData);
+      console.log('Sanity updates completed successfully');
     } catch (error) {
+      console.error('Error updating team images:', error);
       // Fallback to original data if there's an error
       setCCTeam(CCData);
       setECTeam(ECData);
@@ -59,6 +78,7 @@ export default function TeamPageContent() {
   }, []);
 
   useEffect(() => {
+    // Always try to update, but don't block rendering
     updateTeamImages();
   }, [updateTeamImages]);
 
@@ -116,6 +136,8 @@ export default function TeamPageContent() {
     );
   }
 
+
+
   return (
     <>
       <div className="bg-custom-gradient flex flex-col min-h-screen pt-40 flex-grow">
@@ -127,6 +149,14 @@ export default function TeamPageContent() {
             </p>
           </div>
         </div>
+        {isLoading && (
+          <div className="text-white/60 text-center text-lg mt-4 mb-4">
+            <div className="inline-flex items-center gap-2">
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white/50"></div>
+              <span>Updating team data...</span>
+            </div>
+          </div>
+        )}
         <Tabs
           defaultValue="Executives"
           className="flex flex-col justify-center items-center text-white mt-4 md:mt-12"

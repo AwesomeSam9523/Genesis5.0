@@ -10,3 +10,17 @@ export const client = createClient({
   // Enable CORS for browser requests
   withCredentials: false,
 });
+
+// Export a function to get the client safely
+export const getSanityClient = () => {
+  if (typeof window === 'undefined') {
+    // Server-side: return the pre-created client or null
+    return client;
+  } else {
+    // Client-side: ensure we have a valid client
+    if (!client) {
+      console.warn('Sanity client not available on client-side');
+    }
+    return client;
+  }
+};
