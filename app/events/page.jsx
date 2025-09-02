@@ -4,18 +4,18 @@ import EventCard from "@/components/EventCard";
 import eventData from "@/app/events/EventData";
 
 export const metadata = {
-  title: "Events | Genesis 4.0",
+  title: "Events | Genesis 5.0",
   description: "Genesis is the largest technical fest of IEEE MUJ.",
   keywords:
     "hackathon, IEEEMUJ, genesis, genesis4.0, coding, programming, tech , techfest",
   url: "https://genesis.ieeemuj.com",
   openGraph: {
-    title: "Events | Genesis 4.0",
+    title: "Events | Genesis 5.0",
     description: "Genesis is the largest technical fest of IEEE MUJ.",
     url: "https://genesis.ieeemuj.com",
     images:
       "https://images.prismic.io/ieeemuj/Zral1EaF0TcGI1jj_thumb.jpg?auto=format,compress",
-    siteName: "Events | Genesis 4.0",
+    siteName: "Events | Genesis 5.0",
     locale: "en_US",
     type: "website",
   },

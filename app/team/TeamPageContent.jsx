@@ -1,10 +1,10 @@
 // app/team/TeamPageContent.jsx
 "use client";
 
-import { useEffect, useState, useMemo, useCallback } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {useCallback, useEffect, useMemo, useState} from "react";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import HumansCard from "@/components/HumansCard";
-import CCData from "@/app/team/CCData"; 
+import CCData from "@/app/team/CCData";
 import ECData from "@/app/team/ECData";
 import facultyData from "@/app/team/FacultyData";
 import Footer from "@/components/Footer";
@@ -131,7 +131,7 @@ export default function TeamPageContent() {
           <div className="flex flex-col items-center gap-1 md:gap-3">
             <p className="text-[#F5F0D8] text-center text-[2.5rem] font-normal md:text-[4rem] xl:text-[5rem] md:leading-[4.5rem] xl:leading-[5.25rem]">
               Unveiling the minds behind
-              <br /> Genesis 4.0
+              <br/> Genesis 5.0
             </p>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function TeamPageContent() {
           <div className="flex flex-col items-center gap-1 md:gap-3">
             <p className="text-[#F5F0D8] text-center text-[2.5rem] font-normal md:text-[4rem] xl:text-[5rem] md:leading-[4.5rem] xl:leading-[5.25rem]">
               Unveiling the minds behind
-              <br /> Genesis 4.0
+              <br/> Genesis 5.0
             </p>
           </div>
         </div>
