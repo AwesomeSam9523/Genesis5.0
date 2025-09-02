@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const SocialMediaIcon = ({ href, iconSrc, alt }) => {
   if (!href) return null; // Return null if href is not provided or empty
@@ -24,6 +25,13 @@ const SocialMediaIcon = ({ href, iconSrc, alt }) => {
   );
 };
 
+// Loading spinner component
+const LoadingSpinner = () => (
+  <div className="h-full w-full flex items-center justify-center bg-white/5 backdrop-blur-sm">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white/50"></div>
+  </div>
+);
+
 const HumansCard = ({
   index,
   name,
@@ -35,6 +43,16 @@ const HumansCard = ({
   instagram,
   phone,
 }) => {
+  // State to track image loading and error states
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
+  
+  // Check if the profilepic is from Sanity (contains cdn.sanity.io)
+  const isSanityImage = profilepic && profilepic.includes('cdn.sanity.io');
+  
+  // Only show loading for Sanity images, not for default images
+  const shouldShowLoader = imageLoading && isSanityImage;
+
   // Helper function to create phone link
   const renderPhoneLink = (phoneNumber) => (
     <a
@@ -109,13 +127,35 @@ const HumansCard = ({
         viewport={{ once: true }}
       >
         <div className="transform rounded-2xl border border-white/15 bg-white/20 p-6 text-center shadow-lg backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/25 hover:bg-white/25 hover:shadow-xl w-[300px] h-[450px] flex flex-col mx-auto">
-          <div className="mb-4 h-[240px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex-shrink-0">
+          <div className="mb-4 h-[240px] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex-shrink-0 relative">
+            {/* Show loading spinner only for Sanity images while loading */}
+            {shouldShowLoader && (
+              <div className="absolute inset-0 z-10">
+                <LoadingSpinner />
+              </div>
+            )}
+            
             <Image
               src={profilepic}
               alt={name}
               height={400}
               width={300}
-              className="h-full w-full object-cover"
+              className={`h-full w-full object-cover transition-opacity duration-300 ${
+                shouldShowLoader ? 'opacity-0' : 'opacity-100'
+              }`}
+              onLoad={() => {
+                setImageLoading(false);
+                setImageError(false);
+              }}
+              onError={() => {
+                setImageLoading(false);
+                setImageError(true);
+                // If Sanity image fails, try the fallback image
+                if (isSanityImage) {
+                  // The fallback will be handled by the parent component
+                  // or we can set a fallback URL here
+                }
+              }}
             />
           </div>
           <div className="flex-grow flex flex-col justify-between min-h-[130px]">
