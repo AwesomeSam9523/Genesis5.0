@@ -1,26 +1,47 @@
 import { createClient } from "@sanity/client";
 
-export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-  useCdn: false,
-  // For public read access, you can use an empty token or your read token
-  token: process.env.NEXT_PUBLIC_SANITY_TOKEN || "",
-  // Enable CORS for browser requests
-  withCredentials: false,
-});
+// Only create the client if we're in a browser environment and have the required config
+// This prevents build-time errors when environment variables are not available
+let client = null;
+
+const createSanityClient = () => {
+  // Check if we're in a browser environment
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  // Check if we have the required environment variables
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+  const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION;
+  
+  if (!projectId || !dataset || !apiVersion) {
+    console.warn('Sanity client not initialized: Missing required environment variables');
+    return null;
+  }
+
+  try {
+    return createClient({
+      projectId,
+      dataset,
+      apiVersion,
+      useCdn: false,
+      token: process.env.NEXT_PUBLIC_SANITY_TOKEN || "",
+      withCredentials: false,
+    });
+  } catch (error) {
+    console.error('Failed to create Sanity client:', error);
+    return null;
+  }
+};
 
 // Export a function to get the client safely
 export const getSanityClient = () => {
-  if (typeof window === 'undefined') {
-    // Server-side: return the pre-created client or null
-    return client;
-  } else {
-    // Client-side: ensure we have a valid client
-    if (!client) {
-      console.warn('Sanity client not available on client-side');
-    }
-    return client;
+  if (!client) {
+    client = createSanityClient();
   }
+  return client;
 };
+
+// Export the client for backward compatibility (but it will be null during build)
+export { client };

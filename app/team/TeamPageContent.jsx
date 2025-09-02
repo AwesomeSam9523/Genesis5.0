@@ -8,11 +8,12 @@ import CCData from "@/app/team/CCData";
 import ECData from "@/app/team/ECData";
 import facultyData from "@/app/team/FacultyData";
 import Footer from "@/components/Footer";
-import { getUpdatedTeamData } from "./fetchTeamImages";
-
 
 // Set this to true to enable Sanity API calls
 const ENABLE_SANITY_UPDATES = true;
+
+// Check if we're in build time
+const isBuildTime = typeof window === 'undefined';
 
 // Loading spinner component for the entire page
 const PageLoadingSpinner = () => (
@@ -32,20 +33,24 @@ export default function TeamPageContent() {
 
   // Memoize the update function to prevent unnecessary re-renders
   const updateTeamImages = useCallback(async () => {
-    // Skip Sanity updates if disabled
-    if (!ENABLE_SANITY_UPDATES) {
+    // Skip Sanity updates if disabled or during build time
+    if (!ENABLE_SANITY_UPDATES || isBuildTime) {
+      console.log('Skipping Sanity updates - disabled or build time');
       return;
     }
 
-    // Only try Sanity if we're in a browser environment and have config
-    if (typeof window === 'undefined' || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-      console.log('Skipping Sanity updates - not in browser or missing config');
+    // Only try Sanity if we have config
+    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+      console.log('Skipping Sanity updates - missing project ID');
       return;
     }
 
     setIsLoading(true);
     try {
       console.log('Starting Sanity image updates...');
+      
+      // Dynamically import Sanity functions only when needed
+      const { getUpdatedTeamData } = await import('./fetchTeamImages');
       
       // Add a timeout to prevent hanging
       const timeoutPromise = new Promise((_, reject) => 
@@ -75,12 +80,14 @@ export default function TeamPageContent() {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [isBuildTime]);
 
   useEffect(() => {
-    // Always try to update, but don't block rendering
-    updateTeamImages();
-  }, [updateTeamImages]);
+    // Only try to update if not in build time
+    if (!isBuildTime) {
+      updateTeamImages();
+    }
+  }, [updateTeamImages, isBuildTime]);
 
   // Memoize filtered team data to prevent unnecessary re-renders
   const filteredTeams = useMemo(() => ({
