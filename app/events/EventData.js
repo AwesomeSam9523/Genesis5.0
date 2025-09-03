@@ -1,143 +1,101 @@
 const data = [
   {
-    name: "Write it Right",
+    name: "Code Carnival",
     description:
-      "Write it Right is a comprehensive session on research paper writing, led by an expert speaker. ",
+      "A fest-style coding arcade where fun carnival games meet beginner-friendly tech challenges. ",
     banner:
-      "https://images.prismic.io/ieeemuj/ZvMXabVsGrYSv4Pe_bannerwir-01.png?auto=format,compress",
+      "https://images.prismic.io/ieeemuj/aLgniGGNHVfTOj1D_codecarnival.png?auto=format,compress",
     poster:
-      "https://images.prismic.io/ieeemuj/ZvMbF7VsGrYSv4gJ_writeitrightnew-01.png?auto=format,compress",
+      "https://images.prismic.io/ieeemuj/aLgr8mGNHVfTOj4B_codecarnivalp.jpg?auto=format,compress",
     longDescription:
-      "Write it Right is a comprehensive session on research paper writing, led by an expert speaker. The event will cover essential tips and guidelines for crafting a well-structured research paper, ideal for both beginners and experienced writers.",
-    dateAndTime: "26th September | 1:00PM to 4:00PM ",
-    teamSize: "1",
+      "Step into a carnival of code where arcade-style games like knock-the-cans, dice rolls, and ring toss lead to simple yet logical coding challenges. Earn points, win goodies, and enjoy coding in the most fun, casual way.",
+    dateAndTime: "29th August 2025 | 6:00PM to 10:00PM ",
+    teamSize: "N/A",
+    venue: "Tedx Chowk, GHS",
+    registerUrl: "https://linktr.ee/genesis5.0",
+  },
+  {
+    name: "Code Relay",
+    description:
+      "A fast-paced coding relay race where teammates pass the code instead of the baton.",
+    banner:
+      "https://images.prismic.io/ieeemuj/aLgnimGNHVfTOj1F_Coderelay.png?auto=format,compress",
+    poster:
+      "https://images.prismic.io/ieeemuj/aLgr8WGNHVfTOj4A_coderelayp.jpg?auto=format,compress",
+    longDescription:
+      "Work in a team of 2–4, coding in short 7-minute bursts before passing your code to the next teammate—no talking, only comments allowed! Solve DSA challenges under pressure, test your teamwork, and experience coding like a true team sport.",
+    dateAndTime: "3rd September 2025 | 12 noon",
+    teamSize: "2–4 members",
     venue: "AB1 307",
-    registerUrl: "https://linktr.ee/Genesis4.0",
+    registerUrl: "https://forms.gle/GRt4DTK2S5vRcHZf7",
   },
   {
-    name: "For The Record",
-    description:
-      "An IEEE community exclusive event where the participants will try to break existing world records.",
-    banner:
-      "https://images.prismic.io/ieeemuj/ZvMXWbVsGrYSv4PM_FTRgoogleform.png?auto=format,compress",
-    poster:
-      "https://images.prismic.io/ieeemuj/ZvMYbbVsGrYSv4Tr_FTRMAINPOSTER.png?auto=format,compress",
-    longDescription:
-      "An IEEE community exclusive event where the participants will try to break existing world records.",
-    dateAndTime: "27th September | 2:00PM to 5:00PM",
-    teamSize: "1",
-    venue: "Grand Staircase",
-    registerUrl: "https://linktr.ee/Genesis4.0",
-  },
-  {
-    name: 'Ballistic',
-    description: 'It is a gaming event where the shortlisted PC and mobile games are Fifa, BGMI and Mortal Kombat. ',
-    banner: 'https://images.prismic.io/ieeemuj/Zv24erVsGrYSwUTh_Ballisticgoogleform.png?auto=format,compress',
-    poster: 'https://images.prismic.io/ieeemuj/Zv26D7VsGrYSwUT-_BALLISTICMAINPOSTER-1-.png?auto=format,compress',
-    longDescription: 'It is a gaming event where the shortlisted PC and mobile games are Fifa, BGMI and Mortal Kombat. Participants will progressively reach further rounds and the winners will bag the prize pool.',
-    dateAndTime: 'Phase 1 : 3rd October | 6:00PM to 9:00PM , Phase 2 : 5th October | 6:00PM to 9:00PM',
-    teamSize: 'FIFA: 1, Tekken: 1, BGMI: 4',
+    name: 'Ballistic 5.0',
+    description: 'The ultimate gaming showdown featuring BGMI, FIFA, and Tekken battles at Genesis 5.0.',
+    banner: 'https://images.prismic.io/ieeemuj/aLgnmGGNHVfTOj1H_ballistic.png?auto=format,compress',
+    poster: 'https://images.prismic.io/ieeemuj/aLgr8GGNHVfTOj3__ballisticp.jpg?auto=format,compress',
+    longDescription: 'Get ready for 3 days of non-stop gaming action—BGMI squad battles, FIFA, and Tekken face-offs. Compete, showcase your skills, and feel the adrenaline rush as the crowd cheers you on at Genesis Chowk.',
+    dateAndTime: '4th 5th and 7th September',
+    teamSize: 'FIFA: 1v1, Tekken: 1v1, BGMI: 4v4',
     venue: 'GHS (TedX Chowk)',
-    registerUrl: 'https://linktr.ee/Genesis4.0'
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSef3NQSGe61pXsw92UjbwybG_ww5qEPsv9dbTlA3cMFZ0V7iQ/viewform'
   },
   {
     name: 'Tech Summit',
     description: 'A workshop event where speakers, mostly tech enthusiasts and industry professionals are called to give insights in the field of tech.',
-    banner: 'https://images.prismic.io/ieeemuj/Zv26j7VsGrYSwUUU_TECHSUMMITgoogleform.png?auto=format,compress',
+    banner: 'https://images.prismic.io/ieeemuj/aLgnhmGNHVfTOj1C_techsummit.png?auto=format,compress',
     poster: 'https://images.prismic.io/ieeemuj/Zv3IhLVsGrYSwUYq_TECHSUMMITMAINPOSTER.png?auto=format,compress',
     longDescription: 'A workshop event where speakers, mostly tech enthusiasts and industry professionals are called to give insights in the field of tech. It fosters networking opportunities among industry professionals and educates the students about the emerging trends and possibilities',
     dateAndTime: '5th October | 2:00PM to 5:00PM',
     teamSize: '1',
-    venue: 'Vasanti R PAI',
-    registerUrl: 'https://linktr.ee/Genesis4.0'
+    venue: '',
+    registerUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdpcvtBhJAGti2FpVNt6BqncBRDUeFrfQPLCg37y0MmatW68w/viewform'
   },
   {
-    name: "Bit to Byte",
+    name: "Xypher",
     description:
-      "A 24 hour Hackathon with exhilarating problem statements and a platform to present innovation",
+      "An intense overnight hackathon with quizzes, coding, and pitching, backed by a ₹40K prize pool.",
     banner:
-      "https://images.prismic.io/ieeemuj/Zv27qrVsGrYSwUUl_b2bgoogleform-1-.png?auto=format,compress",
+      "https://images.prismic.io/ieeemuj/aLgniWGNHVfTOj1E_xypher.png?auto=format,compress",
     poster:
-      "https://images.prismic.io/ieeemuj/Zv5karVsGrYSwVDK_B2BPOSTER-1-.png?auto=format,compress",
+      "https://images.prismic.io/ieeemuj/aLgvK2GNHVfTOj6H_Xypher-1.png?auto=format,compress",
     longDescription:
-      "A 24 hour Hackathon with exhilarating problem statements and a platform to present innovation",
+      "A rare 10-hour overnight hackathon where innovation meets endurance. Compete across rounds—quiz, overnight development, and pitching your idea to judges—on themes like cybersecurity, blockchain, and beyond. Work with your team, challenge your skills, and win big!",
     dateAndTime:
-      "4th-7th October |  Phase-1: 9AM to 6PM (04/10/24) , Phase-2: 9PM TO 6AM (04/10/24 - 05/10/24) , Phase-3 (Judging): 2:30PM to 4:30PM (07/10/24)",
+      "5th September 2025",
+    teamSize: "2 to 4",
+    venue: "Campus - AB1",
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe__zzClS_oOt24Qr1yYVIIdlijowUHLTQ-1gTrOVC8bBfrCQ/viewform",
+  },
+  {
+    name: "Breacout 6.0",
+    description:
+      "A thrilling campus-wide treasure hunt with a Zombie Apocalypse twist.",
+    banner:
+      "https://images.prismic.io/ieeemuj/aLgnmWGNHVfTOj1I_breacout.png?auto=format,compress",
+    poster:
+      "https://images.prismic.io/ieeemuj/aLgvGmGNHVfTOj6D_Breacout-1.png?auto=format,compress",
+    longDescription:
+      "Gear up for an immersive storyline-driven treasure hunt where your team must solve riddles, crack clues, and outsmart zombies across campus. Fast-paced, fun, and unforgettable—only the cleverest teams will survive till the end.",
+    dateAndTime: "7th September 2025",
     teamSize: "2 to 4",
     venue: "Campus",
-    registerUrl: "https://linktr.ee/Genesis4.0",
-  },
-  {
-    name: "Breacout 5.0",
-    description:
-      "A Harry Potter themed treasure hunt where the participants will follow a specific storyline to reach the final treasure.",
-    banner:
-      "https://images.prismic.io/ieeemuj/ZvMXULVsGrYSv4PD_breacoutgoogleform.png?auto=format,compress",
-    poster:
-      "https://images.prismic.io/ieeemuj/ZvMbJLVsGrYSv4gW_BREACOUTMAINPOSTER-1-.png?auto=format,compress",
-    longDescription:
-      "A Harry Potter themed treasure hunt where the participants will be divided into four groups and each group will follow a specific storyline to reach the final treasure. Scripts, clues, and mini games will be a major part of the event.",
-    dateAndTime: "6th October | 10:00am onwards",
-    teamSize: "1 to 4",
-    venue: "Campus",
-    registerUrl: "https://linktr.ee/Genesis4.0",
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf9mNxIxzggWaobYMBnmEzNnySpkVeZPU_rWErXllZbPoGk9g/viewform",
   },
   {
     name: "Network With WIE",
     description:
-      "NWWIE is an overnight women only event ,filled with technical and non-technical programs.",
+      "An exclusive overnight event for girls to connect, learn, and bond through fun sessions and activities.",
     banner:
-      "https://images.prismic.io/ieeemuj/Zv28BLVsGrYSwUU0_nwwgoogleform.png?auto=format,compress",
+      "https://images.prismic.io/ieeemuj/aLgngmGNHVfTOj0__networkwwie.png?auto=format,compress",
     poster:
       "https://images.prismic.io/ieeemuj/ZvXUHrVsGrYSwDcE_NWWMAINPOSTER.png?auto=format,compress",
     longDescription:
-      "NWWIE is an overnight women only event ,filled with technical and non-technical programs to engage the participants with fellow women",
-    dateAndTime: "6th -7th October | 9:00PM to 6:00AM",
+      "Kick off the night with an inspiring tech session, then dive into games, challenges, and open-mic fun with fellow participants. With goodies, certificates, and lasting connections, it’s a night of laughter, learning, and empowerment.",
+    dateAndTime: "6th September 2025| 9:00PM to 6:00AM",
     teamSize: "1",
-    venue: "AB1 328",
-    registerUrl: "https://linktr.ee/Genesis4.0",
-  },
-  // {
-  //   name: 'MadMax',
-  //   description: 'A robot obstacle course where the participants are supposed to bring their own wired or wireless robots.',
-  //   banner: 'https://images.prismic.io/ieeemuj/Zv2617VsGrYSwUUX_madmaxgoogleform.png?auto=format,compress',
-  //   poster: 'https://images.prismic.io/ieeemuj/ZvXTx7VsGrYSwDb__MADMAXMAINPOSTER.png?auto=format,compress',
-  //   longDescription: 'A robot obstacle course where the participants are supposed to bring their own wired or wireless robots. They have to control their robots through the obstacle course and complete tasks along the way.',
-  //   dateAndTime: '7th October | 11:30AM to 1:30PM',
-  //   teamSize: '1',
-  //   venue: 'N/A',
-  //   registerUrl: ''
-  // },
-  {
-    name: "Tech Expo",
-    description:
-      "A showcase event in which projects of all or any domains will be showcased.",
-    banner:
-      "https://images.prismic.io/ieeemuj/Zv270rVsGrYSwUUv_TECHEXPOgoogleform.png?auto=format,compress",
-    poster:
-      "https://images.prismic.io/ieeemuj/ZvXUWLVsGrYSwDcF_techexpomainposter.png?auto=format,compress",
-    longDescription:
-      "A showcase event where participants from various domains come together to present their innovative projects. This event provides a platform for individuals and teams to demonstrate their creativity, technical expertise, and problem-solving skills across a wide range of fields including technology, design, business, engineering, and more. ",
-    dateAndTime: "7th October | 9:00AM to 5:00PM",
-    teamSize: "1",
-    venue: "AB1 Lobby",
-    registerUrl: "",
-  },
-
-  {
-    name: "Pixel Forge",
-    description:
-      "Pixel Forge is a hands-on game development workshop featuring a guest speaker from IGDC. ",
-    banner:
-      "https://images.prismic.io/ieeemuj/ZvMexbVsGrYSv4u__PixelForgeBanner.png?auto=format,compress",
-    poster:
-      "https://images.prismic.io/ieeemuj/ZvXT9LVsGrYSwDcC_pixelforgemainposter.png?auto=format,compress",
-    longDescription:
-      "Pixel Forge is a hands-on game development workshop featuring a guest speaker from IGDC. Participants will be introduced to key tools and techniques for game development, followed by an exciting game jam to put their skills to the test and create their own games.",
-    dateAndTime: "3rd October | 2:00PM to 5:00PM ",
-    teamSize: "1",
-    venue: "AB1 307",
-    registerUrl: "https://linktr.ee/Genesis4.0",
+    venue: "will be announced soon...",
+    registerUrl: "https://docs.google.com/forms/d/e/1FAIpQLSepWmUJRRRyIEdX0NNIKUYOpX5iLhWIJZA9XVIRc5fujfRqbA/viewform",
   },
 ];
 
