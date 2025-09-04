@@ -90,28 +90,6 @@ const CCData = [
     profilepic: "https://images.prismic.io/ieeemuj/aFrTXnfc4bHWirWG_Drishti_CIS_CC_25-26.jpg?auto=format,compress",
   },
 
-  {
-    name: "Aarohi Dhand",
-    team: "WebDev",
-    role: "Team Member",
-    profilepic: ""
-  },
-
-  {
-    name: "Akshat Kumar",
-    team: "WebDev",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKIiGGNHVfTOdiP_AkshatKumar_headoftechnicalprojects.heif?auto=format,compress"
-  },
-
-
-  {
-    name: "Kriti Sarogi",
-    team: "WebDev",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKJG2GNHVfTOdiQ_Kritisaraogi_seniorcoordinatoroftechnicalprojects-1-.jpg?auto=format,compress"
-  },
-
   // Content Team
   {
     name: "Sara Pansuriya",
@@ -385,60 +363,17 @@ const CCData = [
 // events team
 
   {
-    name: "Shriya Desai",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLH8Y2GNHVfTOdJM_ShriyaDesai_SeniorCoordinatorEvents.jpg?auto=format,compress"
-
-  },
-
-  {
-    name: "Akshat Raheja",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLH9QGGNHVfTOdJU_AkshatRahejaHeadofLogistics.png?auto=format,compress"
-  },
-
-  {
-    name: "Mahika Sahu",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLH-r2GNHVfTOdJy_Mahikasahu_seniorcoordinatorEvents.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Tanmay Gole",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLH_3GGNHVfTOdJ-_Tanmay_seniorcoordinatorevents.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Palakshi Sirat",
-    team: "Events",
-    role: "Team Member",
-    profilpic: "https://images.prismic.io/ieeemuj/aLIAX2GNHVfTOdKB_PalakshiSirsat_HeadofEvents.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Madhura Bhosale",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKFN2GNHVfTOdiK_MadhuraBhosale_JointHeadOfCorporate_page-0001.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Ashita Saxena",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKFN2GNHVfTOdiK_MadhuraBhosale_JointHeadOfCorporate_page-0001.jpg?auto=format,compress"
-  },
-
-  {
     name: "Shreyas Kumar Singh",
     team: "Events",
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/aD3RPbh8WN-LVffH_shreyaskrs-ShreyasKumarSingh.jpg?auto=format,compress",
+  },
+
+  {
+    name: "Tanmoy Mandal",
+    team: "Events",
+    role: "Team Member",
+    profilepic: "https://images.prismic.io/ieeemuj/ZnkWFpbWFboweynT_profile_placeholder.png?auto=format,compress",
   },
   {
     name: "Anshuman Singh",
@@ -481,12 +416,6 @@ const CCData = [
     team: "Events",
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/aD_y37h8WN-LVka4_pic-RahulDurgapal.jpg?auto=format,compress",
-  },
-  {
-    name: "Tanmoy Mandal",
-    team: "Events",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/ZnkWFpbWFboweynT_profile_placeholder.png?auto=format,compress",
   },
   {
     name: "Aayush Walawalkar",
@@ -733,35 +662,6 @@ const CCData = [
     team: "Marketing",
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/aFrTanfc4bHWirWY_Manya_CIS_CC_25-26.jpeg?auto=format,compress",
-  },
-
-  {
-    name: "Ayesha Askari",
-    team: "Marketing",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKKAWGNHVfTOdiS_AyeshaAskari_seniorcoordinatorpromotion.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Chinmayee Khanna",
-    team: "Marketing",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKKX2GNHVfTOdiT_ChinmayeeKhanna_Headofpromotions.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Aksh Singhi",
-    team: "Marketing",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKKwGGNHVfTOdiU_AkshSinghi_SeniorCoordinatorpromotions_page-0001.jpg?auto=format,compress"
-  },
-
-
-  {
-    name: "Kushagra Singh",
-    team: "Marketing",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKLHmGNHVfTOdiV_Kushagra_Singh_Senior_Coordinator_Of_Logistics.jpg?auto=format,compress"
   },
 
   // Corporate
@@ -1035,26 +935,6 @@ const CCData = [
     profilepic: "https://images.prismic.io/ieeemuj/aFrTbHfc4bHWirWb_Nayandeep_CIS_CC_25-26.jpg?auto=format,compress",
   },
 
-  {
-    name: "Dhruv Gupta",
-    team: "Finance",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKMz2GNHVfTOdib_DhruvGupta_SeniorCoordiantorofEvents.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Ambika Khandelwal",
-    team: "Finance",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKNCmGNHVfTOdic_AmbikaKhandelwal_JointHeadofLogistics.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Rujul Dani",
-    team: "Finance",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKNTWGNHVfTOdid_RujulDani_SeniorCoordinatorofMediapg.jpg?auto=format,compress"
-  },
 
   // Crafts Team
   {
@@ -1148,28 +1028,6 @@ const CCData = [
     profilepic: "https://images.prismic.io/ieeemuj/aFrTXXfc4bHWirWF_Bhani_CIS_CC_25-26.jpg?auto=format,compress",
   },
 
-  {
-    name: "Vidushi Ratthore",
-    team: "Crafts",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKLe2GNHVfTOdiX_VidushiRathore_Jointheadofpromotions.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Tanisha Srivastava",
-    team: "Crafts",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKLtmGNHVfTOdiY_TanishaSrivastava_CommunityManager.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Aayra Gupta",
-    team: "Crafts",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKMBWGNHVfTOdiZ_AayraGupta_HeadOfCurations_page-0001.jpg?auto=format,compress"
-  },
-
-
   // Flying Squad Team
   { // ??
     name: "Kushagra Kaushik",
@@ -1248,27 +1106,6 @@ const CCData = [
     team: "Flying Squad",
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/aLKXFWGNHVfTOdjc_Amogh_CIS_CC_25-26.jpg?auto=format,compress",
-  },
-
-  {
-    name: "Anushka Dixit",
-    team: "Flying Squad",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKRH2GNHVfTOdio_AnushkaDixit-Communitymanager.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Suhina Ray",
-    team: "Flying Squad",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKRe2GNHVfTOdis_suhinaray.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Aaryan Chandna",
-    team: "Flying Squad",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKSB2GNHVfTOdiy_Aaryan_SeniorCoordinator_Corporate_page-0001.jpg?auto=format,compress"
   },
 
   // Social Media Team  
@@ -1367,36 +1204,6 @@ const CCData = [
     team: "Social Media",
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/aFrTb3fc4bHWirWg_Prateek_CIS_CC_25-26.jpg?auto=format,compress",
-  },
-
-  {
-    name: "Aastha Shukla",
-    team: "Social Media",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKF-2GNHVfTOdiL_AasthaShukla_Headofsocialmedia.jpg?auto=format,compress"
-  },
-
-
-  {
-    name: "Shivangi Kotnala",
-    team: "Social Media",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKGW2GNHVfTOdiM_ShivangiKotnala-jointheadofsocialmedia.PNG?auto=format,compress"
-  },
-
-  {
-    name: "Vanshika Bhatia",
-    team: "Social Media",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKGpWGNHVfTOdiN_Vanshikabhatia_seniorcoordinatorpromotions.jpg?auto=format,compress"
-  },
-
-
-  {
-    name: "Polina Aneja",
-    team: "Social Media",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKG6GGNHVfTOdiO_PolinaAnejaSeniorCoordinatorSocialMedia.png?auto=format,compress"
   },
 
 
@@ -1506,35 +1313,6 @@ const CCData = [
     profilepic: "https://images.prismic.io/ieeemuj/ZnkWFpbWFboweynT_profile_placeholder.png?auto=format,compress",
   },
 
-  {
-    name: "Suryansh Shah",
-    team: "Logistics",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKPuGGNHVfTOdik_SuryanshShah_SeniorCoordinatorEditorial.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Ved Salodkar",
-    team: "Logistics",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKQCGGNHVfTOdil_VedSalodkar_SeniorCoordinatorLogistic_page-0001.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Sarath Mohanraj",
-    team: "Logistics",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKQSWGNHVfTOdim_Sarath_SeniorCoordinatorofLogistics.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Ritika Lal",
-    team: "Logistics",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKQlWGNHVfTOdin_RitikaLal_seniorcoordinatorofSocialMedia.jpg?auto=format,compress"
-
-  },
-
 
 
   // New Hospitality Team
@@ -1593,7 +1371,7 @@ const CCData = [
     profilepic: "https://images.prismic.io/ieeemuj/ZnkWFpbWFboweynT_profile_placeholder.png?auto=format,compress",
   },
   {
-    name: "Aakshna Tomar",
+    name: "Aakshra Tomar",
     team: "Hospitality",
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/ZnkWFpbWFboweynT_profile_placeholder.png?auto=format,compress",
@@ -1628,38 +1406,6 @@ const CCData = [
     role: "Team Member",
     profilepic: "https://images.prismic.io/ieeemuj/ZnkWFpbWFboweynT_profile_placeholder.png?auto=format,compress",
   },
-
-  {
-    name: "Aakshara Tomar",
-    team: "Hospitality",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKOq2GNHVfTOdif_AakshraTomar_JtHeadMedia-2-.jpg?auto=format,compress"
-  },
-
-  {
-    name: "Kshiti Singh",
-    team: "Hospitality",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKO5GGNHVfTOdig_KshitiSingh_JointHeadEvents.heif?auto=format,compress"
-  },
-
-
-  {
-    name: "Annanya Jaiswal",
-    team: "Hospitality",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKPIWGNHVfTOdih_AnnanyaJaswal_headofgd.JPG?auto=format,compress"
-  },
-
-  {
-    name: "Parth Joshi",
-    team: "Hospitality",
-    role: "Team Member",
-    profilepic: "https://images.prismic.io/ieeemuj/aLKPbGGNHVfTOdii_PARTHJOSHI_SENIORCOORDINATORCURATIONS.jpeg?auto=format,compress"
-  },
-
-
-  
 
 
 ];
